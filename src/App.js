@@ -1,26 +1,84 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
+let buttonName = [buttonOne, buttonTwo, buttonThree]
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Buttons</h1>
+        <SomeComp/>
+        <ButtonTwo/>
+        <ButtonThree/>
       </header>
     </div>
   );
 }
+
+
+const SomeComp = () => {
+  const [count, setValue] =  useState("")
+  const changeName = () => {
+    setValue("")
+  }
+  return(
+    <>
+    {count.length > 0 && <div>{count}</div>}
+    <button className="hotbutton" onClick={changeName}>Button 1</button>
+    </>
+  )
+}
+
+const ButtonTwo = () => {
+  const [count, setValue] =  useState("")
+  const changeName = () => {
+    setValue("")
+  }
+  return(
+    <>
+    {count.length > 0 && <div>{count}</div>}
+    <button className="hotbutton" onClick={changeName}>Button 2</button>
+    </>
+  )
+}
+
+const ButtonThree = () => {
+  const [count, setValue] =  useState("")
+  const changeName = () => {
+    setValue("")
+  }
+  return(
+    <>
+    {count.length > 0 && <div>{count}</div>}
+    <button className="hotbutton" onClick={changeName}>Button 3</button>
+    </>
+  )
+}
+
+
+
+/* 
+function ExampleInteraction() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  if(count > 100) {
+    return
+  } else {
+    return (
+      <div>
+        <p>Do Not click 100 times, please</p>
+        <p>You clicked {count} times</p>
+        <button className="hotbutton" 
+        onClick={handleClick}>
+          Click me
+        </button>
+      </div>
+    )
+}
+} */
 
 export default App;
