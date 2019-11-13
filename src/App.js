@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
 
-let buttonName = [buttonOne, buttonTwo, buttonThree]
 function App() {
   return (
     <div className="App">
